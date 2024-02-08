@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>User_reg</title>
+    </head>
+    <style>
+        table
+        {
+            border:2px solid black;
+            border-collapse:collapse;
+        }
+        body{
+            background-color:pink
+        }
+
+    </style>
+    <body>
+        <form action="" method="POST" autocomplete="off">
+            {% csrf_token%}
+            <table align="center">
+                <tr>
+                    <th>
+                        <h3>Registration</h3><hr>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Name</label>
+                    <input type="text" name="name" pattern="[a-zA-Z]+" oninvalid="setCustomValidity('Please enter an alphabets only.')" required ><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Mobile</label>
+                        <input type="text" name="mobile" pattern="[7-9]{1}[0-9]{9}" oninvalid="setCustomValidity('Please enter valid mobile number.')" required><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" name="submit">
+                    </td>
+                </tr>
+            </table>
+        </form>
+           <form action="result" autocomplete="off">
+            {% csrf_token%}
+            <table align="center">
+                <tr>
+                    <th>
+                        <h3>Login</h3><hr>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Password</label>
+                    <input type="password" name="password" autocomplete="off" required><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" name="login">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        
+        
+    </body>
+</html>

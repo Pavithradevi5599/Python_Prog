@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Usr_details</title>
+        <style>
+            table
+            {
+                border:2px solid black;
+                border-collapse:collapse;
+            }    
+            body{
+                background-color:pink
+            }
+        </style>
+        <body>
+    </head>
+    <form>
+<h3 align="center">View Details</h3><hr>
+        <table align="center">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>Mobile</th>
+                </tr>
+            </thead>
+            {% for data in Data%}
+            <tbody>
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{data.Name}}</td>
+                    <td>{{data.Mobile}}</td>
+                </tr>
+
+            </tbody>
+            {%endfor%}
+           
+        </table>
+    </form>
+    </body>
+</html>
